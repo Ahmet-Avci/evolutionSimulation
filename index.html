@@ -68,6 +68,24 @@
       --border-color: #444;
       --highlight-bg: #383838;
     }
+    /* Modal görünümünü gece modunda da düzeltmek için ekler */
+    .dark-mode .modal-content {
+      background-color: var(--container-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .dark-mode .modal-header,
+    .dark-mode .modal-body,
+    .dark-mode .modal-footer {
+      background-color: var(--container-bg);
+      color: var(--text-color);
+    }
+
+    /* İsteğe bağlı olarak backdrop (arka plan perdesi) renk veya opaklığı ayarlanabilir */
+    .dark-mode .modal-backdrop.show {
+      opacity: 0.8; /* Örneğin biraz daha az saydam yapabilirsiniz */
+    }
   </style>
 </head>
 <body>
@@ -133,8 +151,8 @@
         <button id="startBtn" class="btn btn-primary w-100 mb-2" 
                 data-i18n="startSimulation">Start Simulation</button>
         <!-- Durdurma butonu -->
-        <button id="stopBtn" class="btn btn-danger w-100" 
-                data-i18n="stopSimulation">Stop Simulation</button>
+        <button id="stopBtn" class="btn btn-danger w-100"
+                data-i18n="stopSimulation">Stop Simulation/Show Results</button>
       </div>
 
       <div class="demo-container">
@@ -217,7 +235,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="resultModalLabel">Simulation Results</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body" id="modalBody">
         <!-- Sonuç içeriği JavaScript ile doldurulacak -->
@@ -233,6 +251,7 @@
 /*****************************************************
  * DİL SEÇİMİ İÇİN ÇEVİRİLER
  *****************************************************/
+let currentLang = "en"; // Varsayılan dil
 const translations = {
   en: {
     // ÜST BAR ve UYARILAR
@@ -262,7 +281,7 @@ const translations = {
     labelMutationRate: "Mutation Rate (0-1):",
     labelMaxGens: "Max Generations:",
     startSimulation: "Start Simulation",
-    stopSimulation: "Stop Simulation",
+    stopSimulation: "Stop Simulation/Show Results",
 
     // ÖNEMLİ NOT
     importantNoteTitle: "Important Note:",
@@ -354,7 +373,7 @@ const translations = {
     labelMutationRate: "Mutasyon Oranı (0-1):",
     labelMaxGens: "Maksimum Nesil:",
     startSimulation: "Simülasyonları Başlat",
-    stopSimulation: "Simülasyonu Durdur",
+    stopSimulation: "Simülasyonu Durdur/Sonuçlar",
 
     // ÖNEMLİ NOT
     importantNoteTitle: "Önemli Not:",
@@ -452,9 +471,6 @@ function setLanguage(lang) {
   document.getElementById("resultModalLabel").innerText = translations[lang].resultModalLabel;
   // Modal close butonunu bulalım
   const closeBtns = document.querySelectorAll("[data-bs-dismiss='modal']");
-  closeBtns.forEach(btn => {
-    btn.innerText = translations[lang].modalClose;
-  });
 }
 
 /*****************************************************
@@ -546,7 +562,14 @@ function showResultModal() {
     <li>${translations[currentLang].modalBestString}: <em>${randomBestText}</em></li>
   </ul>
   </p>
-  ...
+  <br>
+  <p><strong>${translations[currentLang].modalEaApproachTitle}</strong>:
+  <ul>
+    <li>${translations[currentLang].modalBestFitness}: ${gaFitness}</li>
+    <li>${translations[currentLang].modalGenerations}: ${gaGenerationVal}</li>
+    <li>${translations[currentLang].modalBestString}: <em>${gaBestText}</em></li>
+    <li>${translations[currentLang].modalApproxTime}: <em>${gaYear}</em></li>
+  </ul>
   <hr>
   <p>${translations[currentLang].modalConclusion}</p>
 `;
@@ -862,6 +885,7 @@ function checkIfBothStopped() {
 const languageSelect = document.getElementById("languageSelect");
 languageSelect.addEventListener("change", (e) => {
   const chosenLang = e.target.value;
+  currentLang = chosenLang;
   setLanguage(chosenLang);
 });
 
