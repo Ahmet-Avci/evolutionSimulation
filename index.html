@@ -235,15 +235,13 @@
  *****************************************************/
 const translations = {
   en: {
-    // Üst Bar
+    // ÜST BAR ve UYARILAR
     labelLanguage: "Language:",
     labelNightMode: "Night Mode",
     labelDayMode: "Day Mode",
-
-    // Uyarılar / Alert Metinleri
     alertNoTarget: "Please enter a target text!",
 
-    // Sayfa Başlık ve Açıklaması
+    // SAYFA BAŞLIKLARI ve AÇIKLAMALAR
     title: "Random Monkey vs. Evolutionary Algorithm",
     description: `This demonstration shows how <strong>completely random keystrokes</strong> (the “Monkey”)
                   struggle to find a specific text, while a <strong>genetic algorithm</strong> with 
@@ -252,8 +250,8 @@ const translations = {
                   In real evolution, there is no <strong>"predetermined target text"</strong>.
                   Here, the <strong>"target text"</strong> is just a simplified representation of 
                   <em>environmental fitness</em>.`,
-
-    // Ayarlar Kısmı (Sol Panel)
+    
+    // AYARLAR (SOL PANEL)
     settingsTitle: "Settings",
     labelTargetText: "Target Text:",
     monkeySettingsTitle: "Monkey Settings",
@@ -266,7 +264,7 @@ const translations = {
     startSimulation: "Start Simulation",
     stopSimulation: "Stop Simulation",
 
-    // Önemli Not
+    // ÖNEMLİ NOT
     importantNoteTitle: "Important Note:",
     importantNoteList: `
       <li>
@@ -283,20 +281,20 @@ const translations = {
       </li>
     `,
 
-    // Maymun Paneli (Sağ Kısım)
+    // MAYMUN PANELİ
     monkeyPanelTitle: "Monkey Process",
     monkeyPanelSubtitle: "Pure Randomness",
     labelMonkeyAttempts: "Number of attempts (Monkey):",
     labelMonkeyFitness: "Target Fitness:",
 
-    // EA Paneli
+    // EVRİMSEL ALGORİTMA PANELİ
     eaPanelTitle: "Evolutionary Algorithm",
     eaPanelSubtitle: "Directed Randomness",
     labelGaGeneration: "Generation:",
     labelGaYears: "Estimated Time (Maymun Yıl):",
     labelGaFitness: "Target Fitness:",
 
-    // Demo Sonu (Disclaimer)
+    // ALT AÇIKLAMA (DISCLAIMER)
     finalDisclaimer: `
       <strong>Note:</strong> Neither approach fully models real-world evolution, since in nature
       there is no <em>"predetermined target"</em>. Selection favors better adaptation 
@@ -306,32 +304,35 @@ const translations = {
       for demonstration.
     `,
 
-    // Modal
+    // MODAL BAŞLIĞI ve BUTON
     resultModalLabel: "Simulation Results",
     modalClose: "Close",
 
-    // Placeholder Metinleri
-    randomPlaceholder: "No best string yet...",
-    gaPlaceholder: "No best string yet...",
-
-    // Modal İçeriği (JS ile Dinamik Metinler)
+    // MODAL DİNAMİK METİNLER (MAYMUN, EA ve ORTAK)
     modalMonkeyApproachTitle: "Monkey (Random) Approach",
     modalEaApproachTitle: "Evolutionary Algorithm (Random + Selection) Approach",
+    modalAttempts: "Attempts",
+    modalBestFitness: "Best Fitness",
+    modalBestString: "Best String",
+    modalGenerations: "Generations",
+    modalApproxTime: "Approx. Time",
     modalConclusion: `This simple comparison highlights how adding <em>selection</em> to randomness
                      can greatly speed up reaching a complex target, akin to natural selection
-                     in biological evolution.`
+                     in biological evolution.`,
+
+    // PLACEHOLDER METİNLER
+    randomPlaceholder: "No best string yet...",
+    gaPlaceholder: "No best string yet..."
   },
 
   tr: {
-    // Üst Bar
+    // ÜST BAR ve UYARILAR
     labelLanguage: "Dil:",
     labelNightMode: "Gece Modu",
     labelDayMode: "Gündüz Modu",
-
-    // Uyarılar / Alert Metinleri
     alertNoTarget: "Lütfen bir hedef metin girin!",
 
-    // Sayfa Başlık ve Açıklaması
+    // SAYFA BAŞLIKLARI ve AÇIKLAMALAR
     title: "Rastgele Maymun vs. Evrimsel Algoritma",
     description: `Bu demonstrasyon, tamamen rastgele tuş basışlarıyla (<strong>Maymun</strong>)
                   belirli bir metnin bulunmasının ne kadar zor olduğunu, buna karşılık
@@ -342,7 +343,7 @@ const translations = {
                   Burada <strong>"hedef metin"</strong>, yalnızca <em>ortama uyum</em> 
                   (fitness) kavramını basitleştirmek için kullanılır.`,
 
-    // Ayarlar Kısmı (Sol Panel)
+    // AYARLAR (SOL PANEL)
     settingsTitle: "Ayarlar",
     labelTargetText: "Hedef Metin:",
     monkeySettingsTitle: "Maymun Ayarları",
@@ -355,7 +356,7 @@ const translations = {
     startSimulation: "Simülasyonları Başlat",
     stopSimulation: "Simülasyonu Durdur",
 
-    // Önemli Not
+    // ÖNEMLİ NOT
     importantNoteTitle: "Önemli Not:",
     importantNoteList: `
       <li>
@@ -372,20 +373,20 @@ const translations = {
       </li>
     `,
 
-    // Maymun Paneli (Sağ Kısım)
+    // MAYMUN PANELİ
     monkeyPanelTitle: "Maymun Süreci",
     monkeyPanelSubtitle: "Tamamen Rastgele",
     labelMonkeyAttempts: "Maymunun deneme sayısı:",
     labelMonkeyFitness: "Hedefe Uyum:",
 
-    // EA Paneli
+    // EVRİMSEL ALGORİTMA PANELİ
     eaPanelTitle: "Evrimsel Algoritma",
     eaPanelSubtitle: "Yönlendirilmiş Rastgelelik",
     labelGaGeneration: "Nesil:",
     labelGaYears: "Tahmini Geçen Zaman (Maymun Yıl):",
     labelGaFitness: "Hedefe Uyum:",
 
-    // Demo Sonu (Disclaimer)
+    // ALT AÇIKLAMA (DISCLAIMER)
     finalDisclaimer: `
       <strong>Not:</strong> Bu iki yaklaşım, doğadaki evrim süreçlerini tam olarak modellemez; 
       çünkü gerçek doğada <em>"önceden belirlenmiş bir hedef"</em> yoktur. Seçilim, mevcut ortama 
@@ -395,20 +396,25 @@ const translations = {
       varsayıyoruz.
     `,
 
-    // Modal
+    // MODAL BAŞLIĞI ve BUTON
     resultModalLabel: "Simülasyon Sonuçları",
     modalClose: "Kapat",
 
-    // Placeholder Metinleri
-    randomPlaceholder: "Henüz en iyi metin bulunamadı...",
-    gaPlaceholder: "Henüz en iyi metin bulunamadı...",
-
-    // Modal İçeriği (JS ile Dinamik Metinler)
+    // MODAL DİNAMİK METİNLER (MAYMUN, EA ve ORTAK)
     modalMonkeyApproachTitle: "Maymun (Rastgele) Yaklaşımı",
     modalEaApproachTitle: "Evrimsel Algoritma (Rastgele + Seçilim) Yaklaşımı",
+    modalAttempts: "Deneme Sayısı",
+    modalBestFitness: "En İyi Uyum",
+    modalBestString: "En İyi Metin",
+    modalGenerations: "Nesil Sayısı",
+    modalApproxTime: "Yaklaşık Süre",
     modalConclusion: `Bu basit karşılaştırma, rastgele sürece <em>seçilim</em> eklemenin
                      ne kadar hızlı sonuca ulaşmayı sağladığını, biyolojik evrimde de
-                     doğal seçilimin benzer bir rol oynadığını göstermektedir.`
+                     doğal seçilimin benzer bir rol oynadığını göstermektedir.`,
+
+    // PLACEHOLDER METİNLER
+    randomPlaceholder: "Henüz en iyi metin bulunamadı...",
+    gaPlaceholder: "Henüz en iyi metin bulunamadı..."
   }
 };
 
@@ -533,29 +539,17 @@ function showResultModal() {
   const gaYear = gaYearEl.innerText;
 
   let comment = `
-    <p><strong>Monkey (Random) Approach</strong>:
-    <ul>
-      <li>Attempts: ${randomIterationVal}</li>
-      <li>Best Fitness: ${randomFitness}</li>
-      <li>Best String: <em>${randomBestText}</em></li>
-    </ul>
-    </p>
-
-    <p><strong>Evolutionary Algorithm (Random + Selection) Approach</strong>:
-    <ul>
-      <li>Generations: ${gaGenerationVal}</li>
-      <li>Approx. Time: ${gaYear} years</li>
-      <li>Best Fitness: ${gaFitness}</li>
-      <li>Best String: <em>${gaBestText}</em></li>
-    </ul>
-    </p>
-    <hr>
-    <p>
-      This simple comparison highlights how adding <em>selection</em> to randomness
-      can greatly speed up reaching a complex target, akin to natural selection
-      in biological evolution.
-    </p>
-  `;
+  <p><strong>${translations[currentLang].modalMonkeyApproachTitle}</strong>:
+  <ul>
+    <li>${translations[currentLang].modalAttempts}: ${randomIterationVal}</li>
+    <li>${translations[currentLang].modalBestFitness}: ${randomFitness}</li>
+    <li>${translations[currentLang].modalBestString}: <em>${randomBestText}</em></li>
+  </ul>
+  </p>
+  ...
+  <hr>
+  <p>${translations[currentLang].modalConclusion}</p>
+`;
 
   modalBody.innerHTML = comment;
   const modal = new bootstrap.Modal(document.getElementById('resultModal'), {});
